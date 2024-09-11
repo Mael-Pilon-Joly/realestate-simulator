@@ -1,52 +1,87 @@
 from typing import List
 from immobilier.models import Propriete
+from realestate_simulator.immobilier.services.Iservice import IService
 
 
-def determiner_proprietes_proches(proprietes: List[Propriete], propriete_visee: Propriete, nombre_km):
-    # Définir les bornes de la propriété visée
-    startX = propriete_visee.position_x
-    startY = propriete_visee.position_y
-    endX = startX + propriete_visee.largeur
-    endY = startY + propriete_visee.longueur
+class ServiceValeur(IService):
 
-    # Liste des propriétés proches qui overlap
-    proprietes_proches = []
+    def determiner_valeur_ajustement_environment_proche(self, propriete: Propriete, listProprietes: List[Propriete]):
+        typesProprietesAProximite = self.determiner_propriete_dans_perimetre(listProprietes)
 
-    for p in proprietes:
-        # Définir les bornes de la propriété actuelle
-        pStartX = p.position_x - 1000 * nombre_km  # n km de marge de chaque côté
-        pStartY = p.position_y - 1000 * nombre_km 
-        pEndX = pStartX + p.largeur + 2000 * nombre_km
-        pEndY = pStartY + p.longueur + 2000 * nombre_km
+        # Ajuster la valeur en fonction des types de propriétés à proximité
+        match propriete.type_propriete:
+            case "IM":
+                if "SP" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+                if "VT" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.15 * propriete.valeur_courrante
+                if "ID" in typesProprietesAProximite:
+                    propriete.valeur_courrante -= 0.20 * propriete.valeur_courrante
+                if "RS" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+                if "CM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+                if "SS" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.05 * propriete.valeur_courrante
+                if "TS" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.15 * propriete.valeur_courrante
+            
+            case "VT":
+                if "IM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+                if "ID" in typesProprietesAProximite:
+                    propriete.valeur_courrante -= 0.15 * propriete.valeur_courrante
+            
+            case "ID":
+              if "IM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+              if "TS" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.15 * propriete.valeur_courrante
+            
+            case "CM":
+                if "IM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.15 * propriete.valeur_courrante
+                if "ED" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+                if "TS" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.15 * propriete.valeur_courrante
+            
+            case "RS":
+                if "IM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
 
-        # Vérifier s'il y a un chevauchement
-        if (startX <= pEndX and endX >= pStartX) and (startY <= pEndY and endY >= pStartY):
-            proprietes_proches.append(p)
-    
-    return proprietes_proches
+            case "SS":
+                if "IM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.05 * propriete.valeur_courrante
+                if "ID" in typesProprietesAProximite:
+                    propriete.valeur_courrante -= 0.1 * propriete.valeur_courrante
+            
+            case "TS":
+                if "IM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+                if "ID" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
+                if "CM" in typesProprietesAProximite:
+                    propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
 
-def determiner_valeur_ajustement_environment_proche(propriete: Propriete, listProprietes: List[Propriete]):
-    typesProprietesAProximite = []
-    
-    for p in listProprietes:
-        if p.type_propriete not in typesProprietesAProximite:
-          typesProprietesAProximite.append(p.type_propriete)
+    def determiner_valeur_ajustement_environment_loin(propriete: Propriete, listProprietes: List[Propriete]):
+        typesProprietesEloignees = self.determiner_propriete_dans_perimetre(listProprietes)
 
-    # Ajuster la valeur en fonction des types de propriétés à proximité
-    match propriete.type_propriete:
-        case "IM":
-            if "SP" in typesProprietesAProximite:
-                propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
-            if "VT" in typesProprietesAProximite:
-                propriete.valeur_courrante += 0.15 * propriete.valeur_courrante
-            if "ID" in typesProprietesAProximite:
-                propriete.valeur_courrante -= 0.20 * propriete.valeur_courrante
-            if "RS" in typesProprietesAProximite:
-                propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
-            if "CM" in typesProprietesAProximite:
-                propriete.valeur_courrante += 0.1 * propriete.valeur_courrante
-            if "SS" in typesProprietesAProximite:
-                propriete.valeur_courrante += 0.05 * propriete.valeur_courrante
-            if "TS" in typesProprietesAProximite:
-                propriete.valeur_courrante += 0.15 * propriete.valeur_courrante
 
+        match propriete.type_propriete:
+            case "IM":
+                if "SP" not in typesProprietesEloignees:
+                    propriete.valeur_courrante -= 0.15 * propriete.valeur_courrante
+                if "SS" not in typesProprietesEloignees:
+                    propriete.valeur_courrante -= 0.05 * propriete.valeur_courrante 
+                if "VT" not in typesProprietesEloignees:
+                    propriete.valeur_courrante -= 0.1 * propriete.valeur_courrante
+            case "ID":
+              if "IM" not in typesProprietesEloignees:
+                    propriete.valeur_courrante -= 0.10 * propriete.valeur_courrante 
+            case "SS":
+              if "IM" not in typesProprietesEloignees:
+                    propriete.valeur_courrante -= 0.5 * propriete.valeur_courrante  
+            case "CM":
+              if "TS" not in typesProprietesEloignees:
+                    propriete.valeur_courrante -= 0.10 * propriete.valeur_courrante 

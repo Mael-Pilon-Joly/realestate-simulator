@@ -93,6 +93,16 @@ class Habitant(models.Model):
     propriete = models.OneToOneField('Propriete', on_delete=models.CASCADE, null=True)
     satisfaction = models.FloatField(default=0.0)
     
+class Quartier(models.Model):
+    nom = models.CharField(max_length=100)
+    point_x_depart = models.IntegerField()  
+    point_y_depart = models.IntegerField()  
+    longueur = models.IntegerField()        
+    largeur = models.IntegerField()         
+    taux_de_criminalite = models.FloatField(default=25.0)  
+
+    def __str__(self):
+        return self.nom
 
 
 
