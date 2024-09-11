@@ -10,79 +10,117 @@ Status propriété:
         EDUCATION,
         TRANSPORT
         
-Facteurs pouvant influencer la valeur des propriétés
-
-Proximité == Rayon 1 KM
-Centre de service à proximité de projet immobilier (+ projet immobilier)
-Projet vert à proximité de projet immobilier (+ pour les deux)
-Projet industriel à proximité de projet immobilier (- immobilier, + industriel)
-Projet de ressources alimentaires à proximité de milieu immobilier (+ pour les deux)
-Projet industriel près de projet vert (- projet vert)
-Projet commercial à proximité de projet immobilier (+ pour les deux)
-Projet social près de projet immobilier (+ pour les deux)
-Projet social près de projet industriel (- pour projet social)
-Projet ressources alimentaires près de projet immobilier (+ pour les deux)
-Projet de transport à proximité de projet immobilier (+ pour les deux)
-Projet résidentiel de luxe près d'un projet industriel (- pour projet résidentiel de luxe)
-Projet de recherche près de projet commercial (+ pour projet commercial)
-Projet de loisirs à proximité de projet immobilier (+ pour les deux)
-
-Loin == + 3KM
-Centre de service loin de projet immobilier (- projet immobilier)
-Projet industriel loin de projet industriel (- pour projet industriel)
-Projet de transport loin de projet commercial (- pour projet commercial)
-Projet social loin de zone résidentielle (- pour les deux)
-Projet vert loin de projet résidentiel (- pour projet résidentiel)
-
-- 
+Facteurs influençant la Valeur des Propriétés
 Proximité (Rayon 1 KM)
+Centre de service à proximité de projet immobilier :
 
-    Proximité d'un projet social :
-        + : Les projets sociaux bien intégrés peuvent réduire le taux de criminalité en offrant des services de soutien et des programmes communautaires.
-        - : Cependant, dans certains cas, les projets sociaux mal gérés ou sous-financés pourraient ne pas avoir l'effet escompté, voire attirer des activités criminelles.
++10% pour la valeur des propriétés immobilières.
+Projet vert à proximité de projet immobilier :
 
-    Proximité d'un projet industriel :
-        + : L'emploi généré par les projets industriels peut réduire le taux de criminalité en offrant des opportunités économiques aux résidents locaux.
-        - : Certains types d'industries (par exemple, celles avec un grand nombre de travailleurs temporaires) pourraient augmenter la criminalité locale en raison d'un afflux de travailleurs non résidents.
++15% pour la valeur des propriétés immobilières.
++10% pour la valeur des projets verts.
+Projet industriel à proximité de projet immobilier :
 
-    Proximité d'un projet de transport :
-        + : Un bon réseau de transport public peut réduire la criminalité en améliorant l'accès aux services et aux opportunités d'emploi.
-        - : Cependant, les grandes gares ou stations peuvent aussi devenir des points chauds pour certaines activités criminelles (par exemple, vols).
+-20% pour la valeur des propriétés immobilières.
++10% pour la valeur des projets industriels.
+Projet de ressources alimentaires à proximité de milieu immobilier :
 
-    Proximité d'un projet commercial :
-        + : Les zones commerciales animées peuvent dissuader la criminalité grâce à la surveillance accrue et à la présence constante de personnes.
-        - : Cependant, des zones commerciales très fréquentées peuvent aussi attirer certains types de crimes, comme le vol à l'étalage.
++10% pour la valeur des propriétés immobilières.
++10% pour la valeur des projets de ressources alimentaires.
+Projet industriel près de projet vert :
 
-    Proximité d'un projet vert :
-        + : Les espaces verts bien entretenus peuvent contribuer à la réduction de la criminalité en améliorant la qualité de vie et en encourageant une utilisation positive de l'espace public.
-        - : Les parcs mal éclairés ou mal entretenus peuvent, au contraire, devenir des lieux propices aux activités criminelles.
+-15% pour la valeur des projets verts.
+Projet commercial à proximité de projet immobilier :
 
-    Proximité d'un centre de services :
-        + : L'accès à des services de qualité (police, santé, éducation) peut contribuer à réduire le taux de criminalité.
-        - : Les centres de services mal gérés ou insuffisamment sécurisés pourraient avoir un effet inverse.
++10% pour la valeur des propriétés immobilières.
++15% pour la valeur des projets commerciaux.
+Projet social près de projet immobilier :
 
-Loin (+ 3 KM)
++5% pour la valeur des propriétés immobilières.
++5% pour la valeur des projets sociaux.
+Projet social près de projet industriel :
 
-    Distance d'un projet social :
-        + : L'absence de projets sociaux à proximité pourrait être neutre si le secteur est bien desservi par d'autres services communautaires.
-        - : L'éloignement des services sociaux essentiels pourrait entraîner une augmentation de la criminalité due à un manque de soutien pour les populations vulnérables.
+-10% pour la valeur des projets sociaux.
+Projet de transport à proximité de projet immobilier :
 
-    Distance d'un projet industriel :
-        + : Moins de bruit et de pollution, ce qui pourrait indirectement réduire les tensions sociales et la criminalité.
-        - : Moins d'opportunités d'emploi à proximité pourrait conduire à une augmentation de la criminalité liée au chômage.
++15% pour la valeur des propriétés immobilières.
++10% pour la valeur des projets de transport.
+Projet résidentiel de luxe près d'un projet industriel :
 
-    Distance d'un projet de transport :
-        - : Un accès difficile au transport public peut isoler une communauté, ce qui pourrait augmenter la criminalité en raison du manque de mobilité économique et sociale.
+-25% pour la valeur des projets résidentiels de luxe.
+Projet de recherche près de projet commercial :
 
-    Distance d'un centre de services :
-        - : Un éloignement des services de police, de santé et d'éducation pourrait augmenter la criminalité en raison d'un accès limité aux interventions d'urgence et aux services de soutien.
++10% pour la valeur des projets commerciaux.
+Projet de loisirs à proximité de projet immobilier :
 
-    Distance d'un projet commercial :
-        + : Moins de circulation, ce qui pourrait indirectement réduire certains types de criminalité.
-        - : Moins d'activité économique pourrait entraîner une augmentation de la criminalité liée au manque de surveillance et à la désaffection des zones.
++10% pour la valeur des propriétés immobilières.
++10% pour la valeur des projets de loisirs.
 
-    Distance d'un projet vert :
-        - : Moins d'espaces verts et de loisirs disponibles pourrait augmenter la criminalité en raison d'un manque d'activités positives pour les résidents.
+
+Loin (+3 KM)
+Centre de service loin de projet immobilier :
+
+-15% pour la valeur des propriétés immobilières.
+Projet industriel loin de projet industriel :
+
+-10% pour la valeur des projets industriels.
+Projet de transport loin de projet commercial :
+
+-10% pour la valeur des projets commerciaux.
+Projet social loin de zone résidentielle :
+
+-5% pour la valeur des propriétés résidentielles.
+-5% pour la valeur des projets sociaux.
+Projet vert loin de projet résidentiel :
+
+-10% pour la valeur des propriétés résidentielles.
+Facteurs influençant le Taux de Criminalité
+Proximité (Rayon 1 KM)
+Proximité d'un projet social :
+
+-10% de réduction du taux de criminalité si bien géré.
++15% d'augmentation du taux de criminalité si mal géré.
+Proximité d'un projet industriel :
+
+-5% de réduction du taux de criminalité si cela génère des emplois locaux.
++10% d'augmentation du taux de criminalité si les travailleurs temporaires augmentent.
+Proximité d'un projet de transport :
+
+-10% de réduction du taux de criminalité grâce à un meilleur accès aux services.
++10% d'augmentation du taux de criminalité autour des grandes gares ou stations.
+Proximité d'un projet commercial :
+
+-15% de réduction du taux de criminalité grâce à la surveillance accrue.
++10% d'augmentation du taux de criminalité liée à la fréquentation élevée (ex : vols).
+Proximité d'un projet vert :
+
+-10% de réduction du taux de criminalité si les espaces verts sont bien entretenus.
++10% d'augmentation du taux de criminalité si les espaces verts sont mal entretenus ou mal éclairés.
+Proximité d'un centre de services :
+
+-15% de réduction du taux de criminalité grâce à l'accès aux services de qualité.
++15% d'augmentation du taux de criminalité si les services sont mal gérés.
+Loin (+3 KM)
+Distance d'un projet social :
+
++10% d'augmentation du taux de criminalité si l'éloignement des services sociaux est problématique.
+Distance d'un projet industriel :
+
+-5% de réduction du taux de criminalité en raison de la réduction du bruit et de la pollution.
++10% d'augmentation du taux de criminalité en raison d'un manque d'opportunités d'emploi.
+Distance d'un projet de transport :
+
++15% d'augmentation du taux de criminalité en raison de l'isolement.
+Distance d'un centre de services :
+
++15% d'augmentation du taux de criminalité en raison de l'accès limité aux interventions d'urgence.
+Distance d'un projet commercial :
+
+-10% de réduction du taux de criminalité en raison de la baisse de fréquentation.
++10% d'augmentation du taux de criminalité en raison d'une baisse de l'activité économique.
+Distance d'un projet vert :
+
++10% d'augmentation du taux de criminalité en raison du manque d'activités positives pour les résidents.
 
 Lois de Comportement des Investisseurs
 
