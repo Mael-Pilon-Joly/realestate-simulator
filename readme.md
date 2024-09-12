@@ -74,32 +74,38 @@ Projet social loin de zone résidentielle :
 Projet vert loin de projet résidentiel :
 
 -10% pour la valeur des propriétés résidentielles.
+
 Facteurs influençant le Taux de Criminalité
 Proximité (Rayon 1 KM)
 Proximité d'un projet social :
 
 -10% de réduction du taux de criminalité si bien géré.
 +15% d'augmentation du taux de criminalité si mal géré.
+
 Proximité d'un projet industriel :
 
--5% de réduction du taux de criminalité si cela génère des emplois locaux.
-+10% d'augmentation du taux de criminalité si les travailleurs temporaires augmentent.
+-5% de réduction du taux de criminalité si bien géré.
++10% d'augmentation du taux de criminalité si mal géré.
+
 Proximité d'un projet de transport :
 
--10% de réduction du taux de criminalité grâce à un meilleur accès aux services.
 +10% d'augmentation du taux de criminalité autour des grandes gares ou stations.
+
 Proximité d'un projet commercial :
 
--15% de réduction du taux de criminalité grâce à la surveillance accrue.
-+10% d'augmentation du taux de criminalité liée à la fréquentation élevée (ex : vols).
+-15% de réduction du taux de criminalité si bien géré.
++10% d'augmentation du taux de criminalité liée si mal géré.
+
 Proximité d'un projet vert :
 
--10% de réduction du taux de criminalité si les espaces verts sont bien entretenus.
-+10% d'augmentation du taux de criminalité si les espaces verts sont mal entretenus ou mal éclairés.
+-10% de réduction du taux de criminalité si les espaces verts si bien géré.
++10% d'augmentation du taux de criminalité si les espaces verts si mal géré.
+
 Proximité d'un centre de services :
 
--15% de réduction du taux de criminalité grâce à l'accès aux services de qualité.
-+15% d'augmentation du taux de criminalité si les services sont mal gérés.
+-15% de réduction du taux de criminalité si bien géré.
++15% d'augmentation du taux de criminalité si mal géré.
+
 Loin (+3 KM)
 Distance d'un projet social :
 
